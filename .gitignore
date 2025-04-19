@@ -1,0 +1,29 @@
+# Binaries
+*.exe
+*.out
+*.test
+
+# Build output
+/build
+/bin
+
+# Go stuff
+**/vendor/
+**/go.sum
+**/go.work.sum
+
+# Protobuf gen
+**/*.pb.go
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Migrations
+migrations/**/sqlc.json

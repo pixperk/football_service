@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package match;
+
+option go_package = "github.com/pixperk/football/proto/matchpb";
+
+service MatchService {
+    rpc CreateMatch(CreateMatchRequest) returns (CreateMatchResponse);
+    rpc GetMatch(GetMatchRequest) returns (GetMatchResponse);
+}
+
+message CreateMatchRequest {
+    string home_team = 1;
+    string away_team = 2;
+    string start_time = 3; // ISO 8601 string
+  }
+  
+  message CreateMatchResponse {
+    int64 match_id = 1;
+  }
+  
+  message GetMatchRequest {
+    int64 match_id = 1;
+  }
+  
+  message GetMatchResponse {
+    int64 match_id = 1;
+    string home_team = 2;
+    string away_team = 3;
+    string start_time = 4;
+  }

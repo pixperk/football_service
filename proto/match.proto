@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package match;
 
-option go_package = "github.com/pixperk/football/proto/matchpb";
+option go_package = "/proto/matchpb";
 
 service MatchService {
     rpc CreateMatch(CreateMatchRequest) returns (CreateMatchResponse);

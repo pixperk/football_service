@@ -35,13 +35,14 @@ sqlc:
 
 migrate-up:
 	@echo "🛠️ Running all migrations..."
-	migrate -path $(MIGRATIONS_MATCH) -database 'postgres://user:pass@localhost:5432/matchdb?sslmode=disable' up
-	migrate -path $(MIGRATIONS_SCORE) -database 'postgres://user:pass@localhost:5432/scoredb?sslmode=disable' up
+	migrate -path $(MIGRATIONS_MATCH) -database 'postgres://postgres:yourpassword@localhost:5432/football?sslmode=disable' up
+	migrate -path $(MIGRATIONS_SCORE) -database 'postgres://postgres:yourpassword@localhost:5432/football?sslmode=disable' up
 
+# Reverting all migrations for both match and score databases
 migrate-down:
 	@echo "⏪ Reverting all migrations..."
-	migrate -path $(MIGRATIONS_MATCH) -database 'postgres://user:pass@localhost:5432/matchdb?sslmode=disable' down
-	migrate -path $(MIGRATIONS_SCORE) -database 'postgres://user:pass@localhost:5432/scoredb?sslmode=disable' down
+	migrate -path $(MIGRATIONS_MATCH) -database 'postgres://postgres:yourpassword@localhost:5432/football?sslmode=disable' down
+	migrate -path $(MIGRATIONS_SCORE) -database 'postgres://postgres:yourpassword@localhost:5432/football?sslmode=disable' down
 
 test:
 	@echo "🧪 Running tests..."

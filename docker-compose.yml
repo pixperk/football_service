@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: football-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: football
+    ports:
+      - "5432:5432"
+    volumes:
+      - football-data:/var/lib/postgresql/data
+    networks:
+      - football-network
+    restart: always
+
+volumes:
+  football-data:
+
+networks:
+  football-network:
+    driver: bridge
